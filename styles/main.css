@@ -1,0 +1,46 @@
+.title {
+font-size: 50px;
+text-align: center;
+font-family: helvetica;
+padding: 30px;
+}
+
+.flex-container {
+display: flex;
+flex-wrap;
+}
+
+.full-center {
+justify-content: center;
+align-items: center
+}
+
+.calendar-weekday {
+font-style: bold;
+font-family: helvetica;
+padding: 10px;
+font-size: 12px;
+text-transform: uppercase;
+}
+
+.no-col {
+background-color: #eaeaea;
+font-family: helvetica;
+}
+
+.col {
+border: 1px solid #d3d3d3;
+min-height: 100px;
+font-family: helvetica;
+margin: 5px;
+font-size: 12px;
+}
+
+.col-25 {
+width: 25%;
+font-family: helvetica;
+}
+
+.optional {
+	display: none;
+}
