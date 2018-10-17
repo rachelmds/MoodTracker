@@ -81,7 +81,8 @@
 }
 
 .col {
-	border: 1px solid rgba(211,211,211,.5);
+	border: 1px solid rgba(0,171,100,.5);
+	border-radius: 5px;
 	min-height: 100px;
 	font-family: 'Lato';
 	margin: 5px;
@@ -109,6 +110,16 @@
 	display: none;
 }
 
+@media screen and (max-width: 600px) {
 
+	.calendar-weekday {
+		width: 25%;
+		font-size: 8px;
+	}
+
+	.col {
+		min-height: 30px;
+	}
+}
 
 
