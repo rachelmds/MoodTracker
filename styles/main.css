@@ -71,7 +71,7 @@
 	font-style: bold;
 	font-family: 'Lato';
 	padding: 10px;
-	font-size: 12px;
+	font-size: 15px;
 	color: #006850;
 	text-transform: uppercase;
 }
@@ -110,16 +110,25 @@
 	display: none;
 }
 
+.sm-view{
+   display:none;
+}
+
 @media screen and (max-width: 600px) {
 
 	.calendar-weekday {
 		width: 25%;
-		font-size: 8px;
 	}
+	.lg-view {
+		display: none;
+	}
+
+    .sm-view{
+       display: inline-flex;
+    }
 
 	.col {
 		min-height: 30px;
 	}
 }
-
 
