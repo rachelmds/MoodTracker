@@ -79,7 +79,7 @@ function drawCal(firstDay, lastDay) {
 	const dateCells = $('.flex-container:not(.js-weekdays) .col-25');
 	dateCells.empty();
 	(dateCells || []).each(function() {
-		$(this).css('background-color', 'white')
+		$(this).css('background-color', 'rgba(255,255,255,0.8')
 	})
 	for (let i = 1; i <= lastDayOfMonth; i++) {
 		const cell = $(dateCells[firstDayOfMonth + i - 1]);
@@ -90,7 +90,7 @@ function drawCal(firstDay, lastDay) {
 		cellDate.setDate(i);
 		const today = data[getDateKey(cellDate)] || [];
 		let index = getIndexOfMaxArr(today);
-		const colors = ["green", "lightgreen", "yellow", "lightred", "red"];
+		const colors = ["#00ab64", "#7bef77", "#fff288", "#ffbb43", "#fd6c4e"];
 
 		
 		if (typeof index !== "undefined") {
@@ -119,28 +119,55 @@ function render(offset = 0) {
 }
 
 
-const data = {
-	"9-13-2018": [
-		0,
-		0,
-		0,
-		0,
-		0,
-	],
-	"9-15-2018": [
-		4,
-		0,
-		1,
-		0,
-		0,
-	],
-	"10-1-2018": [
-		5,
-		0,
-		0,
-		0,
-		0
-	]
+const data = { // pre-populated samples
+	//october
+	"9-1-2018": [0,0,0,0,5,],
+	"9-2-2018": [0,0,0,0,5,],
+	"9-3-2018": [0,0,0,3,1,],
+	"9-4-2018": [0,3,0,0,0,],
+	"9-3-2018": [0,0,0,3,1,],
+	"9-7-2018": [0,6,1,0,0,],
+	"9-10-2018": [0,0,1,0,0,],
+	"9-13-2018": [3,0,1,0,0,],
+	"9-15-2018": [0,0,1,3,0,],
+	"9-16-2018": [1,3,0,0,0],
+	"9-17-2018": [5,0,0,0,0,],
+
+	//september
+	"8-1-2018": [0,3,0,0,0,],
+	"8-3-2018": [0,0,0,3,1,],
+	"8-4-2018": [0,3,0,0,0,],
+	"8-5-2018": [0,0,0,0,1,],
+	"8-7-2018": [0,0,6,0,0,],
+	"8-9-2018": [0,0,1,0,0,],
+	"8-15-2018": [3,0,1,0,0,],
+	"8-16-2018": [0,0,1,3,0,],
+	"8-19-2018": [5,0,0,0,0,],
+	"8-20-2018": [0,0,3,1,2,],
+	"8-21-2018": [0,5,0,0,3,],
+	"8-25-2018": [0,3,0,3,1,],
+	"8-26-2018": [0,2,5,0,0,],
+	"8-27-2018": [0,0,0,3,1,],
+	"8-28-2018": [0,6,1,0,0,],
+	"8-29-2018": [3,0,1,0,0,],
+	"8-30-2018": [3,0,1,0,0,],
+
+	//august
+	"7-1-2018": [0,0,0,2,0,],
+	"7-4-2018": [0,0,0,3,1,],
+	"7-5-2018": [0,3,0,0,0,],
+	"7-6-2018": [0,0,0,0,1,],
+	"7-7-2018": [0,0,6,0,0,],
+	"7-13-2018": [0,0,1,0,0,],
+	"7-15-2018": [3,0,1,0,0,],
+	"7-18-2018": [0,0,1,3,0,],
+	"7-19-2018": [5,0,0,0,0,],
+	"7-20-2018": [0,0,3,1,2,],
+	"7-22-2018": [0,5,0,0,3,],
+	"7-25-2018": [0,3,0,3,1,],
+	"7-28-2018": [0,2,5,0,0,],
+	"7-29-2018": [0,0,0,3,1,],
+	"7-31-2018": [0,6,1,0,0,],
 }
 
 let offset = 0;
@@ -163,10 +190,19 @@ buttons.on('click', function(e) {
 	const d = new Date();
 	console.log(button, button.index()-1)
 
-	const today = data[getDateKey(d)];
-	today[button.index()-1]++;
+	let today = data[getDateKey(d)];
+	if (!today) {
+		data[getDateKey(d)] = [
+			0,
+			0,
+			0,
+			0,
+			0
+		]
+		today = data[getDateKey(d)]
+	}
+	today[button.index()]++;
 	render(offset);
 
 	console.log(today)
 })
-
