@@ -1,0 +1,134 @@
+.gradient {
+	background-image: linear-gradient(to bottom right, #74e0c8, #d0ffbf);
+}
+
+.title {
+	font-size: 50px;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	color: #fff;
+	padding: 30px;
+	cursor: default;
+	display: inline-block;
+	width: 500px;
+}
+
+.js-prev, .js-next {
+	font-family: 'Lato';
+	font-size: 50px;
+	color: #fff;
+	transition-duration: 0.4s;
+	background:none;
+	background-color: inherit;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+
+.js-prev:hover, .js-next:hover{
+    color: #1db190;
+}
+
+.js-button {
+	margin: 10px;
+	opacity: 0.5;
+	transition-duration: 0.4s;
+}
+
+.js-button:hover {
+	opacity: 1.0;
+}
+
+.nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Lato';
+	font-size: 40px;
+	border: 0px;
+	background: none;
+}
+
+.mood-bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap
+}
+
+.full-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.calendar-weekday {
+	font-style: bold;
+	font-family: 'Lato';
+	padding: 10px;
+	font-size: 15px;
+	color: #006850;
+	text-transform: uppercase;
+}
+
+.no-col {
+	font-family: 'Lato';
+}
+
+.col {
+	border: 1px solid rgba(0,171,100,.5);
+	border-radius: 5px;
+	min-height: 85px;
+	font-family: 'Lato';
+	margin: 5px;
+	font-size: 12px;
+	background-color: rgba(211,211,211,.5);
+	transition: all 0.5s;
+}
+
+.col:hover {
+	background-color: rgba(255,255,255, 0.3) !important;
+	cursor: default;
+}
+
+.col-25 {
+	width: 25%;
+	font-family: 'Lato';
+	color: #005733;
+}
+
+.calendar-weekday {
+	color: #1db190;
+}
+
+.optional {
+	display: none;
+}
+
+.sm-view{
+   display:none;
+}
+
+@media screen and (max-width: 600px) {
+
+	.calendar-weekday {
+		width: 25%;
+	}
+	.lg-view {
+		display: none;
+	}
+
+    .sm-view{
+       display: inline-flex;
+    }
+
+	.col {
+		min-height: 30px;
+	}
+}
+
